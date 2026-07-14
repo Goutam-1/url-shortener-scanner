@@ -11,7 +11,7 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://linkhub-98mq6sm9h-genai-project1.vercel.app",
+    "https://linkhub-pi-ten.vercel.app",
   ],
   credentials: true,
 }));
