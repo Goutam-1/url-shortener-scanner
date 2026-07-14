@@ -12,7 +12,7 @@ export default function PreviewPanel({ onUseUrl }) {
     setPreviewData(null);
     setPreviewLoading(true);
     try {
-      const res = await api.get('/preview', { params: { url: previewUrl } });
+      const res = await api.get('api/preview', { params: { url: previewUrl } });
       setPreviewData(res.data.preview);
     } catch (err) {
       setPreviewError(err.response?.data?.message || 'Could not scan this website');

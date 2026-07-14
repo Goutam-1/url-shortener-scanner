@@ -176,12 +176,12 @@ export default function ShortenerForm({ longUrl, setLongUrl }) {
 
                 <div className="mt-2 flex flex-col md:flex-row gap-3">
                   
-                <a    href={`http://localhost:5000/${result.short_code}`}
+                <a    href={`https://linkhub-pi-ten.vercel.app/${result.short_code}`}
                     target="_blank"
                     rel="noreferrer"
                     className="flex-1 rounded-2xl border border-blue-100 bg-blue-50 px-5 py-4 font-semibold text-blue-600 break-all hover:bg-blue-100 transition"
                   >
-                    localhost:5000/{result.short_code}
+                    https://linkhub-pi-ten.vercel.app/{result.short_code}
                   </a>
 
                   <button

@@ -18,7 +18,7 @@ export default function Signup() {
     setLoading(true);
 
     try {
-      const res = await api.post('/auth/signup', { name, email, password });
+      const res = await api.post('api/auth/signup', { name, email, password });
       login(res.data.user, res.data.token);
       navigate('/');
     } catch (err) {
