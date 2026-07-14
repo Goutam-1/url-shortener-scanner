@@ -18,7 +18,7 @@ export default function ShortenerForm({ longUrl, setLongUrl }) {
     setLoading(true);
 
     try {
-      const res = await api.post('/links/create', {
+      const res = await api.post('api/links/create', {
         longUrl,
         customAlias: customAlias || undefined,
         password: password || undefined,
