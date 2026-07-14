@@ -20,7 +20,7 @@ export default function Header() {
               <path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </div>
-          <span className="text-lg font-bold text-gray-900 tracking-tight">SnapLink</span>
+          <span className="text-lg font-bold text-gray-900 tracking-tight">LinkHub</span>
         </Link>
 
         <div className="flex items-center gap-3">
