@@ -91,6 +91,7 @@ router.post('/create', optionalAuth, async (req, res) => {
        (password IS NOT NULL) as has_password`,
       [shortCode, longUrl, isCustom, userId, hashedPassword, expiryDate]
     );
+  
 
     res.status(201).json({ success: true, link: result.rows[0] });
   } catch (err) {
