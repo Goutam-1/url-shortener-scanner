@@ -12,7 +12,7 @@ export default function Footer() {
                   <path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <span className="text-sm font-semibold text-gray-900">SnapLink</span>
+              <span className="text-sm font-semibold text-gray-900">LinkHub</span>
             </div>
             <p className="text-sm text-gray-500 max-w-xs leading-relaxed">
               Efficient, secure and accessible URL shortening. We turn long links into short, powerful experiences.
@@ -45,7 +45,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-10 pt-6 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-sm text-gray-500">© 2026 SnapLink. All rights reserved.</p>
+          <p className="text-sm text-gray-500">© 2026 LinkHub. All rights reserved.</p>
           <div className="flex items-center gap-2 text-sm text-gray-500">
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
             System Operational

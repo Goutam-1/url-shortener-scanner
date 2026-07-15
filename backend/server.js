@@ -5,6 +5,7 @@ const pool = require('./db');
 const authRoutes = require('./routes/auth');
 const linkRoutes = require('./routes/links');
 const previewRoutes = require('./routes/preview');
+const adminRoutes = require('./routes/admin');
 
 const app = express();
 
@@ -35,6 +36,7 @@ app.get('/api/test-db', async (req, res) => {
 app.use('/api/auth', authRoutes);
 app.use('/api/links', linkRoutes);
 app.use('/api/preview', previewRoutes);
+app.use('/api/admin', adminRoutes);
 
 // REDIRECT ROUTE — must be after other routes
 // REDIRECT ROUTE — must be after other routes

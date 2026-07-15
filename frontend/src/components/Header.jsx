@@ -26,12 +26,27 @@ export default function Header() {
         <div className="flex items-center gap-3">
           {user ? (
             <>
-              <Link
+              {/* <Link
                 to="/dashboard"
                 className="hidden sm:inline text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200"
               >
                 Hi, {user.name}
-              </Link>
+              </Link> */}
+
+              <Link
+  to="/dashboard"
+  className="hidden sm:inline text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200"
+>
+  Hi, {user.name}
+</Link>
+{user.role === 'admin' && (
+  <Link
+    to="/admin"
+    className="hidden sm:inline px-3 py-1.5 text-xs font-semibold text-purple-700 bg-purple-50 border border-purple-100 rounded-lg hover:bg-purple-100 transition-colors duration-200"
+  >
+    Admin
+  </Link>
+)}
               <button
                 onClick={handleLogout}
                 className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 border border-gray-200 rounded-lg hover:bg-gray-50 transition-all duration-200"

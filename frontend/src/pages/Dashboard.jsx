@@ -30,7 +30,7 @@ export default function Dashboard() {
 
     async function fetchLinks() {
         try {
-            const res = await api.get("/links/my-links");
+            const res = await api.get("api/links/my-links");
             setLinks(res.data.links || []);
         } catch {
             setError("Failed to load your links");

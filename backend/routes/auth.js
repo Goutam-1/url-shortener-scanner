@@ -24,10 +24,17 @@ router.post('/signup', async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10);
 
     // Insert new user
-    const newUser = await pool.query(
-      'INSERT INTO users (name, email, password) VALUES ($1, $2, $3) RETURNING id, name, email',
-      [name, email, hashedPassword]
-    );
+    // const newUser = await pool.query(
+    //   'INSERT INTO users (name, email, password) VALUES ($1, $2, $3) RETURNING id, name, email',
+    //   [name, email, hashedPassword]
+    // );
+
+const newUser = await pool.query(
+  'INSERT INTO users (name, email, password) VALUES ($1, $2, $3) RETURNING id, name, email, role',
+  [name, email, hashedPassword]
+);
+
+
 
     const user = newUser.rows[0];
 
@@ -38,11 +45,17 @@ router.post('/signup', async (req, res) => {
       { expiresIn: '7d' }
     );
 
+    // res.status(201).json({
+    //   success: true,
+    //   token,
+    //   user: { id: user.id, name: user.name, email: user.email },
+    // });
+
     res.status(201).json({
-      success: true,
-      token,
-      user: { id: user.id, name: user.name, email: user.email },
-    });
+  success: true,
+  token,
+  user: { id: user.id, name: user.name, email: user.email, role: user.role },
+});
   } catch (err) {
     res.status(500).json({ success: false, message: err.message });
   }
@@ -78,11 +91,17 @@ router.post('/login', async (req, res) => {
       { expiresIn: '7d' }
     );
 
-    res.json({
-      success: true,
-      token,
-      user: { id: user.id, name: user.name, email: user.email },
-    });
+    // res.json({
+    //   success: true,
+    //   token,
+    //   user: { id: user.id, name: user.name, email: user.email },
+    // });
+
+  res.json({
+  success: true,
+  token,
+  user: { id: user.id, name: user.name, email: user.email, role: user.role },
+});
   } catch (err) {
     res.status(500).json({ success: false, message: err.message });
   }
