@@ -45,8 +45,8 @@ export default function ShortenerForm({ longUrl, setLongUrl }) {
 
   const qrUrl = result
     ? `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(
-        `${window.location.origin.replace('5173', '5000')}/${result.short_code}`
-      )}`
+      `${window.location.origin.replace('5173', '5000')}/${result.short_code}`
+    )}`
     : null;
 
   return (
@@ -86,54 +86,62 @@ export default function ShortenerForm({ longUrl, setLongUrl }) {
 
       {/* Advanced */}
       {showAdvanced && (
-        <div className="mt-6 rounded-3xl bg-white/70 backdrop-blur-xl border border-white shadow-xl p-8 animate-fade-in-up">
-          <div className="grid md:grid-cols-2 gap-6">
+        <div className="mt-6 rounded-3xl bg-white/80 backdrop-blur-xl border border-blue-100 shadow-2xl shadow-blue-100/40 p-4 sm:p-6 lg:p-8 animate-fade-in-up">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+            {/* Custom Alias */}
             <div>
-              <label className="text-sm font-semibold text-gray-600 mb-2 block">
+              <label className="block mb-2 text-sm font-semibold text-gray-600">
                 Custom Alias
               </label>
-              <div className="flex rounded-xl overflow-hidden border">
-                <span className="bg-gray-100 px-4 flex items-center text-gray-500">
+
+              <div className="flex overflow-hidden rounded-2xl border border-blue-100 bg-white transition-all duration-300 hover:border-blue-400 hover:shadow-lg focus-within:border-blue-500 focus-within:ring-4 focus-within:ring-blue-100">
+                <span className="flex items-center bg-blue-50 px-3 sm:px-4 text-gray-500 text-sm whitespace-nowrap border-r border-blue-100">
                   snap.link/
                 </span>
+
                 <input
                   type="text"
                   value={customAlias}
                   onChange={(e) => setCustomAlias(e.target.value)}
                   placeholder="my-link"
-                  className="flex-1 px-4 py-3 outline-none"
+                  className="min-w-0 flex-1 bg-transparent px-3 sm:px-4 py-4 outline-none"
                 />
               </div>
             </div>
 
+            {/* Password */}
             <div>
-              <label className="text-sm font-semibold text-gray-600 mb-2 block">
+              <label className="block mb-2 text-sm font-semibold text-gray-600">
                 Password
               </label>
+
               <input
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Optional"
-                className="w-full rounded-xl border px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full rounded-2xl border border-blue-100 bg-white px-4 py-4 outline-none transition-all duration-300 hover:border-blue-400 hover:shadow-lg focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
               />
             </div>
 
+            {/* Expiry */}
             <div className="md:col-span-2">
-              <label className="text-sm font-semibold text-gray-600 mb-2 block">
+              <label className="block mb-2 text-sm font-semibold text-gray-600">
                 Expiry Date
               </label>
+
               <input
                 type="datetime-local"
                 value={expiresAt}
                 onChange={(e) => setExpiresAt(e.target.value)}
-                className="w-full rounded-xl border px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full rounded-2xl border border-blue-100 bg-white px-4 py-4 outline-none transition-all duration-300 hover:border-blue-400 hover:shadow-lg focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
               />
             </div>
+
           </div>
         </div>
       )}
-
       {/* Error */}
       {error && (
         <div className="mt-5 rounded-xl bg-red-50 border border-red-200 px-5 py-4 text-red-600">
@@ -175,8 +183,8 @@ export default function ShortenerForm({ longUrl, setLongUrl }) {
                 <label className="text-sm font-medium text-gray-500">Short URL</label>
 
                 <div className="mt-2 flex flex-col md:flex-row gap-3">
-                  
-                <a    href={`https://url-shortener-scanner.onrender.com/${result.short_code}`}
+
+                  <a href={`https://url-shortener-scanner.onrender.com/${result.short_code}`}
                     target="_blank"
                     rel="noreferrer"
                     className="flex-1 rounded-2xl border border-blue-100 bg-blue-50 px-5 py-4 font-semibold text-blue-600 break-all hover:bg-blue-100 transition"
